@@ -45,7 +45,7 @@ void initChannel(){
     ADCSRA |= (1 << ADEN); //enable ADC
 }
 
-//get a read. oversample to increase resolution, and discard last bit to reduce noise
+//get a reading. oversample to increase resolution, and discard last bit to reduce noise
 int getData(){
     constexpr int bit_over = 3;
     constexpr int oversample_len = pow(4, bit_over);
@@ -90,7 +90,7 @@ void loop(){
 
     long led_last_time=millis();
     int lstatus=LOW;
-    //wait for first lecture above Threshold
+    //wait for first reading above Threshold
     while(true){
         TrinketKeyboard.poll();
 
